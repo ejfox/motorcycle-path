@@ -38,7 +38,6 @@ export default {
     const isMobile = window.innerWidth < 768
     this.map = new maplibregl.Map({
       container: 'map-container',
-      // style: `https://api.maptiler.com/maps/streets/style.json?key=dW1bjSk5npya8SZXgGuw`,
       interactive: !isMobile,
       pitch: 80,
       // Use a free map style from Stamen
