@@ -56,6 +56,9 @@ export default {
   mounted: function () {
     // this.initMap()
 
+    // scroll the page to the top if it isn't already with vanilla JS
+    window.scrollTo(0, 0)
+
     this.bindFileDropEvents()
     // add listener for window scroll
     window.addEventListener('scroll', () => {
@@ -123,6 +126,7 @@ export default {
 					Listen to all of the drag events and bind an event listener to each
 					for the fileform.
 				*/
+      // eslint-disable-next-line no-extra-semi
       ;[
         'drag',
         'dragstart',
