@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="pa5" v-if="coordinates.length < 1">
+    <section class="pa5 fixed top-0 w-100" v-if="coordinates.length < 1">
       <h2>Drop a .gpx file to see it on the map</h2>
       <form
         id="drop-form"
@@ -116,6 +116,9 @@ export default {
 
       // disable map zoom when using scroll
       this.map.scrollZoom.disable()
+
+      // allow further pitch over default of 60
+      this.map.setMaxPitch(80)
 
       this.map.addControl(new maplibregl.NavigationControl())
 
@@ -259,6 +262,13 @@ export default {
   top: 0;
   bottom: 0;
   width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(36, 0, 0, 1) 56%,
+    rgb(249 209 89) 62%,
+    rgb(81 151 173) 80%,
+    rgb(2 92 179) 95%
+  );
 }
 
 #loading {
